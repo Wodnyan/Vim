@@ -11,6 +11,8 @@ set nowrap
 set encoding=UTF-8 
 " set guicursor=
 
+map <Space> <Leader>
+
 call plug#begin('~/.config/nvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'
@@ -50,7 +52,7 @@ endif
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-let g:coc_global_extensions = [ 'coc-tsserver' ]
+let g:coc_global_extensions = [ 'coc-tsserver', 'coc-pyright' ]
 
 nmap <C-n> :NERDTreeToggle<CR>
 
