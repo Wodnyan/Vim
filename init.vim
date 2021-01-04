@@ -27,6 +27,10 @@ Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
 Plug 'ayu-theme/ayu-vim' 
 Plug 'posva/vim-vue'
+Plug 'vim-airline/vim-airline'
+Plug 'preservim/nerdcommenter'
+Plug 'pantharshit00/vim-prisma'
+Plug 'joshdick/onedark.vim'
 call plug#end()
 
 inoremap <silent><expr> <TAB>
