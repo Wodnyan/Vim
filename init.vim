@@ -9,7 +9,7 @@ set nonu
 set rnu
 set nowrap
 set encoding=UTF-8 
-" set guicursor=
+set guicursor=
 
 map <Space> <Leader>
 
@@ -65,10 +65,15 @@ let g:gitgutter_terminal_reports_focus=0
 set updatetime=100
 
 set termguicolors     " enable true colors support
-let ayucolor="light"  " for light version of theme
-let ayucolor="mirage" " for mirage version of theme
+"let ayucolor="light"  " for light version of theme
+"let ayucolor="mirage" " for mirage version of theme
 let ayucolor="dark"   " for dark version of theme
 colorscheme ayu
+"colorscheme gruvbox
+"colorscheme onedark
+
+" Nerd tree size
+:let g:NERDTreeWinSize=40
 
 
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
