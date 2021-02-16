@@ -5,8 +5,9 @@ set tabstop=2 softtabstop=2
 set shiftwidth=2
 set expandtab
 set smartindent
-set nonu
-set rnu
+"set nonu
+"set nu
+"set rnu
 set nowrap
 set encoding=UTF-8 
 set guicursor=
@@ -56,7 +57,7 @@ endif
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-let g:coc_global_extensions = [ 'coc-tsserver', 'coc-pyright' ]
+let g:coc_global_extensions = [ 'coc-tsserver', 'coc-pyright', 'coc-omnisharp' ]
 
 nmap <C-n> :NERDTreeToggle<CR>
 
@@ -69,11 +70,22 @@ set termguicolors     " enable true colors support
 "let ayucolor="mirage" " for mirage version of theme
 let ayucolor="dark"   " for dark version of theme
 "colorscheme ayu
-colorscheme gruvbox
-"colorscheme onedark
+"colorscheme gruvbox
+colorscheme onedark
 
 " Nerd tree size
 :let g:NERDTreeWinSize=40
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
 
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
