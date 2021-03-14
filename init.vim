@@ -12,6 +12,8 @@ set nowrap
 set encoding=UTF-8 
 set guicursor=
 
+filetype plugin on
+
 map <Space> <Leader>
 
 call plug#begin('~/.config/nvim/plugged')
@@ -32,6 +34,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdcommenter'
 Plug 'pantharshit00/vim-prisma'
 Plug 'joshdick/onedark.vim'
+Plug 'tpope/vim-surround'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tpope/vim-fugitive'
+Plug 'cocopon/iceberg.vim'
 call plug#end()
 
 inoremap <silent><expr> <TAB>
@@ -66,12 +72,13 @@ let g:gitgutter_terminal_reports_focus=0
 set updatetime=100
 
 set termguicolors     " enable true colors support
-"let ayucolor="light"  " for light version of theme
+" let ayucolor="light"  " for light version of theme
 "let ayucolor="mirage" " for mirage version of theme
-let ayucolor="dark"   " for dark version of theme
-"colorscheme ayu
-"colorscheme gruvbox
-colorscheme onedark
+" let ayucolor="dark"   " for dark version of theme
+" colorscheme ayu
+" colorscheme gruvbox
+" colorscheme onedark
+colorscheme iceberg
 
 " Nerd tree size
 :let g:NERDTreeWinSize=40
@@ -92,9 +99,17 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
+let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDCommentEmptyLines = 1
+let g:NERDToggleCheckAllLines = 1
+let g:NERDCompactSexyComs = 1
+
 inoremap { {}<ESC>ha
 inoremap ( ()<ESC>ha
 inoremap [ []<ESC>ha
 inoremap < <><ESC>ha
+map <c-h> :bprevious<CR> 
+map <c-l> :bnext<CR>
 "inoremap ` ``<ESC>ha
 "inoremap " ""<ESC>ha
